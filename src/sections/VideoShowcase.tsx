@@ -11,19 +11,19 @@ const VideoShowcase = () => {
 
   const videos = [
     {
-      src: '/videos/VID_20220414_134051.mp4',
+      src: 'https://drive.google.com/uc?export=download&id=1u8fy8wKEyka069pV5UT8RH1V_FFcwAVm',
       thumb: thumb1,
       title: "Abakkus Office Walkthrough",
       location: "Santacruz, Mumbai"
     },
     {
-      src: '/videos/VID_20220414_140136.mp4',
+      src: 'https://drive.google.com/uc?export=download&id=1u7BxqO8M6NXsbNHPfWyGbC3m9tm_55c0',
       thumb: thumb2,
       title: "Interior Dynamics",
       location: "Project Site"
     },
     {
-      src: '/videos/VID_20220414_145903.mp4',
+      src: 'https://drive.google.com/uc?export=download&id=1uCnVmXOkDdHpTCMxsUd6hJ5oQdxxcWSX',
       thumb: thumb3,
       title: "Spatial Experience",
       location: "Finished Interior"
