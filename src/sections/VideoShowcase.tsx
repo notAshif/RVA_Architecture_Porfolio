@@ -7,23 +7,24 @@ import thumb2 from '../assets/picture_2/architecture/Visualisation of proposed p
 import thumb3 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (1).webp';
 
 const VideoShowcase = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-
   const videos = [
     {
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      // REPLACE with your Cloudinary URL 1
+      src: 'https://res.cloudinary.com/demo/video/upload/docs/architect.mp4',
       thumb: thumb1,
-      title: "Diagnostic Test Video",
-      location: "Public Server"
+      title: "Abakkus Office Walkthrough",
+      location: "Santacruz, Mumbai"
     },
     {
-      src: 'https://drive.google.com/uc?export=download&id=1u7BxqO8M6NXsbNHPfWyGbC3m9tm_55c0',
+      // REPLACE with your Cloudinary URL 2
+      src: 'https://res.cloudinary.com/demo/video/upload/docs/interior.mp4',
       thumb: thumb2,
       title: "Interior Dynamics",
       location: "Project Site"
     },
     {
-      src: 'https://drive.google.com/uc?export=download&id=1uCnVmXOkDdHpTCMxsUd6hJ5oQdxxcWSX',
+      // REPLACE with your Cloudinary URL 3
+      src: 'https://res.cloudinary.com/demo/video/upload/docs/spatial.mp4',
       thumb: thumb3,
       title: "Spatial Experience",
       location: "Finished Interior"
@@ -42,10 +43,10 @@ const VideoShowcase = () => {
           {videos.map((video, index) => (
             <motion.div
               key={index}
-              initial={isMobile ? { opacity: 0 } : { opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: isMobile ? 0 : index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
               className="relative group rounded-lg overflow-hidden bg-muted cursor-pointer aspect-[9/16]"
             >
               <video
@@ -55,8 +56,8 @@ const VideoShowcase = () => {
                 muted
                 loop
                 playsInline
-                controls
                 autoPlay
+                controls
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 z-10 pointer-events-none">
                 <span className="text-accent text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{video.location}</span>
