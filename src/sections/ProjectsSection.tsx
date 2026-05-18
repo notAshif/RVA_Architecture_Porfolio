@@ -2,15 +2,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { cn } from '../styles/utils';
 import { MapPin } from 'lucide-react';
-
-import project1 from '../assets/DJI_20250125_115148_445.JPG';
-import abakkusImg from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (1).jpg';
-import bungalowImg from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 1.jpg';
-import miraroadImg from '../assets/picture_1/4BHK Miraroad/IMG_20220523_124921.jpg';
-import tradebullsImg from '../assets/picture_2/architecture/Tradebulls, Location_ ahmedabad/Tradebulls ahmedabad.jpg';
-import lukzerImg from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lukzer0.jpg';
-import jangidImg from '../assets/picture_2/interior/1BHK - Jangid Complex-Miraroad/IMG_20231122_131912.jpg';
-import visualImg from '../assets/picture_2/architecture/Visualisation of proposed projects/WhatsApp Image 2021-03-11 at 07.33.37.jpeg';
+import { projects } from '../data/projects';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import ProgressiveImage from '../components/ProgressiveImage';
 
 interface ProjectCardProps {
   title: string;
@@ -21,34 +15,33 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ title, category, location, image, className }: ProjectCardProps) => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: isMobile ? 20 : 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-      className={cn('group relative overflow-hidden bg-muted cursor-pointer rounded-lg', className)}
+      viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
+      transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+      className={cn('group relative overflow-hidden bg-muted cursor-pointer rounded-lg transform-gpu', className)}
     >
-      <div className="aspect-[16/10] md:aspect-[16/9] overflow-hidden">
-        <motion.img
+      <div className="aspect-[16/9] overflow-hidden">
+        <ProgressiveImage
           src={image}
           alt={title}
-          loading="lazy"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+          className="object-center transition-all duration-700 md:group-hover:scale-105"
         />
       </div>
       
-      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-        <div className="flex items-center text-accent text-xs uppercase tracking-widest mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 z-10">
+        <div className="flex items-center text-accent text-xs uppercase tracking-widest mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
           <MapPin size={12} className="mr-1" />
           {location}
         </div>
-        <span className="text-white/60 text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+        <span className="text-white/60 text-[10px] uppercase tracking-widest mb-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
           {category}
         </span>
-        <h3 className="text-2xl md:text-3xl font-display tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">
+        <h3 className="text-2xl md:text-3xl font-display tracking-tight transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-100">
           {title}
         </h3>
       </div>
@@ -56,57 +49,9 @@ const ProjectCard = ({ title, category, location, image, className }: ProjectCar
   );
 };
 
+
 const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "Abakkus LLP",
-      category: "Commercial Office",
-      location: "Santacruz, Mumbai",
-      image: abakkusImg
-    },
-    {
-      title: "Lukzer Showroom",
-      category: "Retail Interior",
-      location: "Vasai, Palghar",
-      image: lukzerImg
-    },
-    {
-      title: "Luxury Bungalow",
-      category: "Residential Architecture",
-      location: "Jaunpur, Uttar Pradesh",
-      image: bungalowImg
-    },
-    {
-      title: "Jangid Complex",
-      category: "Residential Interior",
-      location: "Miraroad, Mumbai",
-      image: jangidImg
-    },
-    {
-      title: "Modern 4BHK",
-      category: "Interior Design",
-      location: "Miraroad, Mumbai",
-      image: miraroadImg
-    },
-    {
-      title: "Tradebulls Office",
-      category: "Commercial",
-      location: "Ahmedabad, Gujarat",
-      image: tradebullsImg
-    },
-    {
-      title: "Future Visions",
-      category: "Proposed Projects",
-      location: "Multiple Locations",
-      image: visualImg
-    },
-    {
-      title: "The Glass Pavilion",
-      category: "Residential",
-      location: "Conceptual",
-      image: project1
-    }
-  ];
+  const featuredProjects = projects.filter(p => p.featured).slice(0, 6);
 
   return (
     <section id="projects" className="py-24 md:py-48 px-6 md:px-12">
@@ -128,11 +73,10 @@ const ProjectsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project) => (
             <ProjectCard 
-              key={index}
+              key={project.id}
               {...project}
-              className={index % 2 === 1 ? 'md:mt-24' : ''}
             />
           ))}
         </div>

@@ -66,7 +66,7 @@ const Contact = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="RVA Studio Location"
-              className="grayscale contrast-125 brightness-75 invert hue-rotate-180"
+              className="grayscale brightness-90"
             ></iframe>
           </div>
         </div>

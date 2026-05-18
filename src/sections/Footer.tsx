@@ -1,6 +1,6 @@
 import { Mail, Globe, MapPin, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/picture_2/RVA logo n text/LOGO.png';
+import logo from '../assets/picture_2/RVA logo n text/LOGO.webp';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16 md:mb-24">
           <div>
             <div className="flex items-center space-x-4 mb-8">
-              <img src={logo} alt="RVA Architects Logo" className="h-16 w-auto grayscale" />
+              <img src={logo} alt="RVA Architects Logo" className="h-16 w-auto" />
               <h2 className="text-3xl font-display tracking-tighter uppercase">RVA architects</h2>
             </div>
             <h3 className="text-4xl md:text-7xl font-display tracking-tighter mb-8 md:mb-12 leading-[0.95] md:leading-none">

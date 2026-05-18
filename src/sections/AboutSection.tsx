@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
-import aboutImage from '../assets/DJI_20250125_122907_366.JPG';
+import aboutImage from '../assets/DJI_20250125_122907_366.webp';
 
 const AboutSection = () => {
   return (
@@ -50,7 +50,8 @@ const AboutSection = () => {
             src={aboutImage} 
             alt="Interior of a modern architectural project by RVA Studio"
             loading="lazy"
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+            decoding="async"
+            className="w-full h-full object-cover object-top transition-all duration-1000"
           />
         </motion.div>
       </div>

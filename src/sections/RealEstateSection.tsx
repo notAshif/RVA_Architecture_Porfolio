@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { MapPin, Maximize2, Bed, Bath } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import bungalowImg from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 4.jpg';
-import miraroadImg from '../assets/picture_1/4BHK Miraroad/IMG_20220523_132817.jpg';
-import santacruzImg from '../assets/picture_2/interior/Residential, Location_ Santacruz/IMG_20240213_125531.jpg';
+import bungalowImg from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 4.webp';
+import miraroadImg from '../assets/picture_1/4BHK Miraroad/IMG_20220523_132817.webp';
+import santacruzImg from '../assets/picture_2/interior/Residential, Location_ Santacruz/IMG_20240213_125531.webp';
 
 const properties = [
   {
@@ -70,7 +70,8 @@ const RealEstateSection = () => {
                   width={800}
                   height={1000}
                   loading="lazy"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  decoding="async"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute top-6 right-6">
                   <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase">

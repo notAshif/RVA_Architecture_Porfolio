@@ -1,27 +1,30 @@
 import { motion } from 'framer-motion';
 import { ArrowDownRight } from 'lucide-react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
-import heroImage from '../assets/DJI_20250125_131223_996.JPG';
+import heroImage from '../assets/DJI_20250125_131223_996.webp';
 
 const Hero = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
     <section className="relative h-screen w-full flex flex-col justify-end px-6 pb-12 md:px-12 md:pb-24 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <motion.div
-          initial={{ scale: 1.2 }}
+          initial={{ scale: isMobile ? 1.05 : 1.2 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 2, ease: [0.76, 0, 0.24, 1] }}
-          className="w-full h-full bg-cover bg-center brightness-[0.5]"
+          transition={{ duration: isMobile ? 1.5 : 2, ease: [0.76, 0, 0.24, 1] }}
+          className="w-full h-full bg-cover bg-center brightness-[0.8]"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
       </div>
 
       <div className="max-w-7xl mx-auto w-full">
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: isMobile ? 40 : 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.76, 0, 0.24, 1] }}
         >
           <span className="text-accent text-xs md:text-base uppercase tracking-[0.3em] font-medium mb-6 block">
             Architecture & Design Studio
@@ -35,7 +38,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 1, delay: isMobile ? 0.8 : 1.5 }}
           className="flex justify-between items-end"
         >
           <div className="max-w-md hidden md:block">

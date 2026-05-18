@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 import { Layout, Shield, Wind, Zap } from 'lucide-react';
 
-import archDesignImg from '../assets/picture_2/architecture/Visualisation of proposed projects/pic3.jpg';
-import interiorArchImg from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (23).jpg';
-import sustainableImg from '../assets/picture_2/architecture/Visualisation of proposed projects/WhatsApp Image 2021-03-11 at 07.33.37.jpeg';
-import projectMgmtImg from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (14).jpg';
+import archDesignImg from '../assets/picture_2/architecture/Visualisation of proposed projects/pic3.webp';
+import interiorArchImg from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (23).webp';
+import sustainableImg from '../assets/picture_2/architecture/Visualisation of proposed projects/WhatsApp Image 2021-03-11 at 07.33.37.webp';
+import projectMgmtImg from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (14).webp';
 
 const services = [
   {
@@ -58,9 +58,11 @@ const ServicesSection = () => {
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-0 bg-transparent" />
                 <div className="absolute top-6 left-6 text-white bg-accent p-3 rounded-full scale-75 group-hover:scale-100 transition-transform duration-500">
                   {service.icon}
                 </div>

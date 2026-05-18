@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
-import project5 from '../assets/DJI_20250125_120321_916.jpg';
-import project6 from '../assets/DJI_20250125_121457_869.JPG';
-import project7 from '../assets/DJI_20250125_121739_432.JPG';
-import abakkus1 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (20).jpg';
-import abakkus2 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (33).jpg';
-import abakkus3 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (7).jpg';
-import bungalow2 from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 2.jpg';
-import bungalow3 from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 3.jpg';
-import miraroad2 from '../assets/picture_1/4BHK Miraroad/IMG_20220523_130332.jpg';
-import miraroad3 from '../assets/picture_1/4BHK Miraroad/IMG_20220523_131015.jpg';
-import lukzer1 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (1).jpg';
-import lukzer2 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (25).jpg';
-import lukzer3 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (12).jpg';
-import jangid1 from '../assets/picture_2/interior/1BHK - Jangid Complex-Miraroad/IMG_20231122_132327.jpg';
-import jangid2 from '../assets/picture_2/interior/1BHK - Jangid Complex-Miraroad/IMG_20231211_142259.jpg';
-import visual1 from '../assets/picture_2/interior/Visualisations/WhatsApp Image 2021-03-11 at 07.33.36 (1).jpeg';
-import visual2 from '../assets/picture_2/interior/Visualisations/WhatsApp Image 2021-03-11 at 07.33.37 (1).jpeg';
+import project5 from '../assets/DJI_20250125_120321_916.webp';
+import project6 from '../assets/DJI_20250125_121457_869.webp';
+import project7 from '../assets/DJI_20250125_121739_432.webp';
+import abakkus1 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (20).webp';
+import abakkus2 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (33).webp';
+import abakkus3 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (7).webp';
+import bungalow2 from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 2.webp';
+import bungalow3 from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 3.webp';
+import miraroad2 from '../assets/picture_1/4BHK Miraroad/IMG_20220523_130332.webp';
+import miraroad3 from '../assets/picture_1/4BHK Miraroad/IMG_20220523_131015.webp';
+import lukzer1 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (1).webp';
+import lukzer2 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (25).webp';
+import lukzer3 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer (12).webp';
+import jangid1 from '../assets/picture_2/interior/1BHK - Jangid Complex-Miraroad/IMG_20231122_132327.webp';
+import jangid2 from '../assets/picture_2/interior/1BHK - Jangid Complex-Miraroad/IMG_20231211_142259.webp';
+import visual1 from '../assets/picture_2/interior/Visualisations/WhatsApp Image 2021-03-11 at 07.33.36 (1).webp';
+import visual2 from '../assets/picture_2/interior/Visualisations/WhatsApp Image 2021-03-11 at 07.33.37 (1).webp';
 
 const images = [
   project5, 
@@ -59,7 +59,8 @@ const GallerySection = () => {
                 src={img}
                 alt={`Architectural project detail ${index + 1}`}
                 loading="lazy"
-                className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                decoding="async"
+                className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
               />
             </motion.div>
           ))}
