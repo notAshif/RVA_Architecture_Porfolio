@@ -9,19 +9,19 @@ import thumb3 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer
 const VideoShowcase = () => {
   const videos = [
     {
-      src: 'https://player.cloudinary.com/embed/?cloud_name=dwa63clox&public_id=VID_20220414_134051_obfyoa',
+      src: 'https://res.cloudinary.com/dwa63clox/video/upload/VID_20220414_134051_obfyoa.mp4',
       thumb: thumb1,
       title: "Abakkus Office Walkthrough",
       location: "Santacruz, Mumbai"
     },
     {
-      src: 'https://player.cloudinary.com/embed/?cloud_name=dwa63clox&public_id=VID_20220414_140136_a5xzvs',
+      src: 'https://res.cloudinary.com/dwa63clox/video/upload/VID_20220414_140136_a5xzvs.mp4',
       thumb: thumb2,
       title: "Interior Dynamics",
       location: "Project Site"
     },
     {
-      src: 'https://player.cloudinary.com/embed/?cloud_name=dwa63clox&public_id=VID_20220414_145903_b5qcsq',
+      src: 'https://res.cloudinary.com/dwa63clox/video/upload/VID_20220414_145903_b5qcsq.mp4',
       thumb: thumb3,
       title: "Spatial Experience",
       location: "Finished Interior"
@@ -46,13 +46,15 @@ const VideoShowcase = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="relative group rounded-lg overflow-hidden bg-muted cursor-pointer aspect-[9/16]"
             >
-              <iframe
+              <video
                 src={video.src}
-                className="w-full h-full border-0"
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                allowFullScreen
-                title={video.title}
-              ></iframe>
+                poster={video.thumb}
+                className="w-full h-full object-cover"
+                muted
+                loop
+                playsInline
+                autoPlay
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 z-10 pointer-events-none">
                 <span className="text-accent text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{video.location}</span>
                 <h3 className="text-xl font-display tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{video.title}</h3>
