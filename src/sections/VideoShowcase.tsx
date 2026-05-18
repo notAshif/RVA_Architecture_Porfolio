@@ -9,22 +9,19 @@ import thumb3 from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lakzer
 const VideoShowcase = () => {
   const videos = [
     {
-      // REPLACE with your Cloudinary URL 1
-      src: 'https://res.cloudinary.com/demo/video/upload/docs/architect.mp4',
+      src: 'https://player.cloudinary.com/embed/?cloud_name=dwa63clox&public_id=VID_20220414_134051_obfyoa',
       thumb: thumb1,
       title: "Abakkus Office Walkthrough",
       location: "Santacruz, Mumbai"
     },
     {
-      // REPLACE with your Cloudinary URL 2
-      src: 'https://res.cloudinary.com/demo/video/upload/docs/interior.mp4',
+      src: 'https://player.cloudinary.com/embed/?cloud_name=dwa63clox&public_id=VID_20220414_140136_a5xzvs',
       thumb: thumb2,
       title: "Interior Dynamics",
       location: "Project Site"
     },
     {
-      // REPLACE with your Cloudinary URL 3
-      src: 'https://res.cloudinary.com/demo/video/upload/docs/spatial.mp4',
+      src: 'https://player.cloudinary.com/embed/?cloud_name=dwa63clox&public_id=VID_20220414_145903_b5qcsq',
       thumb: thumb3,
       title: "Spatial Experience",
       location: "Finished Interior"
@@ -49,16 +46,13 @@ const VideoShowcase = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="relative group rounded-lg overflow-hidden bg-muted cursor-pointer aspect-[9/16]"
             >
-              <video
+              <iframe
                 src={video.src}
-                poster={video.thumb}
-                className="w-full h-full object-cover"
-                muted
-                loop
-                playsInline
-                autoPlay
-                controls
-              />
+                className="w-full h-full border-0"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                title={video.title}
+              ></iframe>
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 z-10 pointer-events-none">
                 <span className="text-accent text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{video.location}</span>
                 <h3 className="text-xl font-display tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{video.title}</h3>
