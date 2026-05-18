@@ -1,36 +1,37 @@
 import { motion } from 'framer-motion';
 import { MapPin, Maximize2, Bed, Bath } from 'lucide-react';
-import project7 from '../assets/DJI_20250125_121739_432.JPG';
-import project8 from '../assets/DJI_20250125_121805_381.JPG';
-import project9 from '../assets/DJI_20250125_121829_289.JPG';
+import { Link } from 'react-router-dom';
+import bungalowImg from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 4.jpg';
+import miraroadImg from '../assets/picture_1/4BHK Miraroad/IMG_20220523_132817.jpg';
+import santacruzImg from '../assets/picture_2/interior/Residential, Location_ Santacruz/IMG_20240213_125531.jpg';
 
 const properties = [
   {
-    title: "Vantage Point Villa",
-    location: "Richmond Hills, VA",
-    price: "$2,450,000",
-    sqft: "4,500",
-    beds: 4,
-    baths: 4.5,
-    image: project7,
+    title: "The Grand Bungalow",
+    location: "Jaunpur, UP",
+    price: "Architectural Marvel",
+    sqft: "6,500",
+    beds: 6,
+    baths: 5,
+    image: bungalowImg,
   },
   {
-    title: "The Obsidian House",
-    location: "Downtown District",
-    price: "$1,890,000",
-    sqft: "3,200",
+    title: "Miraroad Residence",
+    location: "Miraroad, Mumbai",
+    price: "Modern Interior",
+    sqft: "1,800",
+    beds: 4,
+    baths: 4,
+    image: miraroadImg,
+  },
+  {
+    title: "Santacruz Apartment",
+    location: "Santacruz, Mumbai",
+    price: "Premium Living",
+    sqft: "2,200",
     beds: 3,
     baths: 3,
-    image: project8,
-  },
-  {
-    title: "Skyline Terrace",
-    location: "West End Plaza",
-    price: "$3,120,000",
-    sqft: "5,100",
-    beds: 5,
-    baths: 6,
-    image: project9,
+    image: santacruzImg,
   }
 ];
 
@@ -38,17 +39,17 @@ const RealEstateSection = () => {
   return (
     <section id="real-estate" className="py-24 md:py-48 px-6 md:px-12 bg-white text-background">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end">
+        <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="max-w-2xl">
-            <span className="text-accent text-sm uppercase tracking-[0.3em] font-bold mb-4 block">Exclusive Listings</span>
-            <h2 className="text-5xl md:text-8xl font-display tracking-tighter">Real Estate <br /> <span className="text-accent italic font-light">Portfolio.</span></h2>
+            <span className="text-accent text-xs md:text-sm uppercase tracking-[0.3em] font-bold mb-4 md:mb-6 block">Exclusive Projects</span>
+            <h2 className="text-4xl md:text-8xl font-display tracking-tighter leading-[0.95] md:leading-[0.9]">Residential <br /> <span className="text-accent italic font-light">Showcase.</span></h2>
           </div>
-          <div className="mt-8 md:mt-0">
-             <button className="group flex items-center space-x-4">
+          <div className="mt-4 md:mt-0">
+             <Link to="/portfolio" className="group flex items-center space-x-4">
                 <span className="uppercase tracking-widest text-xs font-bold border-b-2 border-background pb-1 group-hover:text-accent group-hover:border-accent transition-all">
                   Browse all properties
                 </span>
-              </button>
+              </Link>
           </div>
         </div>
 
@@ -72,7 +73,7 @@ const RealEstateSection = () => {
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute top-6 right-6">
-                  <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase">
+                  <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase">
                     {property.price}
                   </div>
                 </div>

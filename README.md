@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# RVA Studio | Architectural Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, high-performance architectural portfolio website built with React, Framer Motion, and Lenis Smooth Scroll. Designed to showcase spatial excellence through minimalist aesthetics and fluid interactions.
 
-Currently, two official plugins are available:
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-19-blue)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.0-teal)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-purple)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Fluid Smooth Scroll:** Integrated with Lenis for a high-end, cinematic scrolling experience.
+- **Cinematic Animations:** Powered by Framer Motion, featuring staggered reveals, parallax effects, and smooth route transitions.
+- **Dynamic Splash Screen:** A data-driven loading experience that synchronizes with asset readiness.
+- **Performance Optimized:** Lazy loading, strategic asset management, and efficient memory handling for smooth 60fps interactions.
+- **Responsive & Accessible:** Fully mobile-optimized with keyboard-friendly navigation.
+- **Modern Tech Stack:** Built with React 19, TypeScript, and Tailwind CSS 4.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** [React](https://react.dev/) (19+)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (v4)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Smooth Scroll:** [Lenis](https://lenis.darkroom.engineering/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Routing:** [React Router 7](https://reactrouter.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (Latest LTS recommended)
+- npm, yarn, or bun
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/rva-portfolio.git
+   cd rva-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📁 Project Structure
+
+```text
+src/
+├── animations/    # Reusable animation variants
+├── components/    # Core UI components (Navbar, LoadingScreen, etc.)
+├── layouts/       # Route layout wrappers
+├── pages/         # Page-level components
+├── sections/      # Modular homepage sections
+├── styles/        # Global CSS and Tailwind configuration
+└── assets/        # High-resolution architectural imagery
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📄 License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+Built with precision by **RVA Studio**.

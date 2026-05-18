@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../styles/utils';
+import logo from '../assets/picture_2/RVA logo n text/LOGO.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,15 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Handle Escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Portfolio', href: '/portfolio' },
@@ -37,12 +47,16 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 py-6 md:px-12 md:py-8',
-        scrolled ? 'bg-background/80 backdrop-blur-md py-4' : 'bg-transparent'
+        scrolled ? 'bg-background/95 py-4 border-b border-white/5' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-display tracking-tighter mix-blend-difference">
-          RVA<span className="text-accent">.</span>
+        <Link to="/" className="flex items-center space-x-3 group">
+          <img src={logo} alt="RVA Logo" className="h-10 w-auto invert group-hover:scale-110 transition-transform" />
+          <div className="flex flex-col">
+            <span className="text-xl font-display tracking-tighter leading-none">RVA</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Architects</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

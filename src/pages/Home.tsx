@@ -5,6 +5,7 @@ import RealEstateSection from '../sections/RealEstateSection';
 import ServicesSection from '../sections/ServicesSection';
 import StatsSection from '../sections/StatsSection';
 import GallerySection from '../sections/GallerySection';
+import VideoShowcase from '../sections/VideoShowcase';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AboutSection />
       <RealEstateSection />
       <ProjectsSection />
+      <VideoShowcase />
       <GallerySection />
       <ServicesSection />
       <StatsSection />

@@ -6,9 +6,6 @@ import heroImage from '../assets/DJI_20250125_131223_996.JPG';
 const Hero = () => {
   return (
     <section className="relative h-screen w-full flex flex-col justify-end px-6 pb-12 md:px-12 md:pb-24 overflow-hidden">
-      {/* Preload Hero Image */}
-      <link rel="preload" as="image" href={heroImage} />
-      
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <motion.div
@@ -26,10 +23,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.76, 0, 0.24, 1] }}
         >
-          <span className="text-accent text-sm md:text-base uppercase tracking-[0.3em] font-medium mb-6 block">
+          <span className="text-accent text-xs md:text-base uppercase tracking-[0.3em] font-medium mb-6 block">
             Architecture & Design Studio
           </span>
-          <h1 className="text-6xl md:text-[10vw] leading-[0.9] mb-12 max-w-[90%]">
+          <h1 className="text-5xl md:text-[10vw] leading-[0.95] md:leading-[0.9] mb-12 max-w-[95%] md:max-w-[90%]">
             REDEFINING <br />
             <span className="text-accent italic font-light">SPACES</span>
           </h1>

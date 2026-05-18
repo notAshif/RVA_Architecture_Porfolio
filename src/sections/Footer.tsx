@@ -1,5 +1,6 @@
 import { Mail, Globe, MapPin, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/picture_2/RVA logo n text/LOGO.png';
 
 const Footer = () => {
   return (
@@ -8,60 +9,72 @@ const Footer = () => {
       className="pt-24 pb-12 px-6 md:px-12 bg-white text-background"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16 md:mb-24">
           <div>
-            <h2 className="text-5xl md:text-8xl font-display tracking-tighter mb-12">
+            <div className="flex items-center space-x-4 mb-8">
+              <img src={logo} alt="RVA Architects Logo" className="h-16 w-auto grayscale" />
+              <h2 className="text-3xl font-display tracking-tighter uppercase">RVA architects</h2>
+            </div>
+            <h3 className="text-4xl md:text-7xl font-display tracking-tighter mb-8 md:mb-12 leading-[0.95] md:leading-none">
               Let's build <br />
               <span className="text-accent italic font-light">together.</span>
-            </h2>
-            <div className="flex space-x-8">
+            </h3>
+            <div className="flex space-x-6 md:space-x-8">
               <a
-                href="mailto:hello@rva-studio.com"
-                className="p-4 border border-background/10 rounded-full hover:bg-background hover:text-white transition-all duration-500"
+                href="mailto:rvaarchitects@outlook.com"
+                className="p-3 md:p-4 border border-background/10 rounded-full hover:bg-background hover:text-white transition-all duration-500"
               >
-                <Mail size={24} />
+                <Mail size={20} className="md:w-6 md:h-6" />
               </a>
               <a
                 href="#"
-                className="p-4 border border-background/10 rounded-full hover:bg-background hover:text-white transition-all duration-500"
+                className="p-3 md:p-4 border border-background/10 rounded-full hover:bg-background hover:text-white transition-all duration-500"
               >
-                <Globe size={24} />
+                <Globe size={20} className="md:w-6 md:h-6" />
               </a>
               <Link
                 to="/contact"
-                className="p-4 border border-background/10 rounded-full hover:bg-background hover:text-white transition-all duration-500"
+                className="p-3 md:p-4 border border-background/10 rounded-full hover:bg-background hover:text-white transition-all duration-500"
               >
-                <MapPin size={24} />
+                <MapPin size={20} className="md:w-6 md:h-6" />
               </Link>
             </div>
           </div>
 
           <div className="flex flex-col justify-between">
-            <div className="grid grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-12">
               <div>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-background/40 block mb-6">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-background/40 block mb-4 md:mb-6">
                   Contact
                 </span>
-                <p className="text-lg"> rvaarchs@gmail.com</p>
-                <p className="text-lg">+91 9136894017</p>
+                <p className="text-base md:text-lg">rvaarchitects@outlook.com</p>
+                <p className="text-base md:text-lg">+91 9136894017</p>
+                <p className="text-base md:text-lg">+91 9869631912</p>
               </div>
               <div>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-background/40 block mb-6">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-background/40 block mb-4 md:mb-6">
                   Office
                 </span>
-                <p className="text-lg">M-406, Silent Park, Golden nest</p>
-                <p className="text-lg">
-                  Mirabhayander Road bhayander East - 401105
+                <p className="text-base md:text-lg">
+                  Office no. 4, D/82- Happy home Estate,
                 </p>
+                <p className="text-base md:text-lg">
+                  Poonam sagar complex, Miraroad East,
+                </p>
+                <p className="text-base md:text-lg">Thane 401 105</p>
               </div>
             </div>
 
-            <div className="mt-24 md:mt-0">
-              <form className="relative">
+            <div className="mt-16 md:mt-0">
+              <span className="text-[10px] uppercase tracking-widest font-bold text-background/40 block mb-4 md:mb-2">
+                Our Mission
+              </span>
+              <p className="text-lg font-display uppercase tracking-tighter">RVA architects</p>
+              <form className="relative mt-8">
                 <input
                   type="email"
                   placeholder="SUBSCRIBE TO OUR NEWSLETTER"
-                  className="w-full bg-transparent border-b border-background/20 py-4 focus:outline-none focus:border-accent transition-colors uppercase text-xs tracking-widest font-bold text-background"
+                  className="w-full bg-transparent border-b border-background/20 py-4 focus:outline-none focus:border-accent transition-colors uppercase text-[10px] md:text-xs tracking-widest font-bold text-background placeholder:text-background/30"
                 />
                 <button className="absolute right-0 top-1/2 -translate-y-1/2 text-background">
                   <ArrowUpRight size={20} />
@@ -71,8 +84,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-background/5 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] uppercase tracking-[0.3em] font-bold text-background/40">
-          <p>© 2026 RVA STUDIO. ALL RIGHTS RESERVED.</p>
+        <div className="pt-8 md:pt-12 border-t border-background/5 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 text-[10px] uppercase tracking-[0.3em] font-bold text-background/40 text-center md:text-left">
+          <p>© 2026 RVA ARCHITECTS. ALL RIGHTS RESERVED.</p>
           <div className="flex space-x-8">
             <Link to="/about" className="hover:text-accent transition-colors">
               Our Story

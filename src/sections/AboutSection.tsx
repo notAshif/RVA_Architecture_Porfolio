@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import aboutImage from '../assets/DJI_20250125_122907_366.JPG';
 
@@ -29,11 +30,11 @@ const AboutSection = () => {
               harmonize with their surroundings.
             </p>
             <div className="pt-8">
-              <button className="group flex items-center space-x-4">
+              <Link to="/about" className="group flex items-center space-x-4">
                 <span className="uppercase tracking-widest text-xs font-bold border-b-2 border-background pb-1 group-hover:text-accent group-hover:border-accent transition-all">
                   Read our story
                 </span>
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -47,7 +48,8 @@ const AboutSection = () => {
         >
           <img 
             src={aboutImage} 
-            alt="Architecture concept"
+            alt="Interior of a modern architectural project by RVA Studio"
+            loading="lazy"
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
           />
         </motion.div>

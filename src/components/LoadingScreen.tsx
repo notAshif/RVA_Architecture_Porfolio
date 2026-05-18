@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-
 const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,18 +19,18 @@ const LoadingScreen = () => {
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 bg-background z-[10000] flex flex-col justify-center items-center px-6"
         >
-          <div className="overflow-hidden mb-8">
+          <div className="overflow-hidden mb-8 w-full text-center">
             <motion.h1
-              initial={{ y: 100 }}
+              initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-              className="text-6xl md:text-9xl font-display tracking-tighter"
+              className="text-2xl min-[375px]:text-3xl sm:text-6xl md:text-8xl lg:text-9xl font-display tracking-tighter leading-none"
             >
-              RVA STUDIO
+              RVA ARCHITECTS
             </motion.h1>
           </div>
           
-          <div className="w-64 h-[1px] bg-white/10 relative overflow-hidden">
+          <div className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-md h-[1px] bg-white/10 relative overflow-hidden">
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: '0%' }}

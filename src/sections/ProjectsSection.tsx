@@ -1,42 +1,54 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { cn } from '../styles/utils';
+import { MapPin } from 'lucide-react';
 
 import project1 from '../assets/DJI_20250125_115148_445.JPG';
-import project2 from '../assets/DJI_20250125_120226_669.jpg';
-import project3 from '../assets/DJI_20250125_120328_260.jpg';
-import project4 from '../assets/DJI_20250125_121148_373.jpg';
+import abakkusImg from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (1).jpg';
+import bungalowImg from '../assets/picture_2/architecture/Bungalow, Location_ Jaunpur/View 1.jpg';
+import miraroadImg from '../assets/picture_1/4BHK Miraroad/IMG_20220523_124921.jpg';
+import tradebullsImg from '../assets/picture_2/architecture/Tradebulls, Location_ ahmedabad/Tradebulls ahmedabad.jpg';
+import lukzerImg from '../assets/picture_2/interior/Lukzer, Loacation_ Vasai/lukzer0.jpg';
+import jangidImg from '../assets/picture_2/interior/1BHK - Jangid Complex-Miraroad/IMG_20231122_131912.jpg';
+import visualImg from '../assets/picture_2/architecture/Visualisation of proposed projects/WhatsApp Image 2021-03-11 at 07.33.37.jpeg';
 
 interface ProjectCardProps {
   title: string;
   category: string;
+  location: string;
   image: string;
   className?: string;
 }
 
-const ProjectCard = ({ title, category, image, className }: ProjectCardProps) => {
+const ProjectCard = ({ title, category, location, image, className }: ProjectCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-      className={cn('group relative overflow-hidden bg-muted cursor-pointer', className)}
+      className={cn('group relative overflow-hidden bg-muted cursor-pointer rounded-lg', className)}
     >
       <div className="aspect-[16/10] md:aspect-[16/9] overflow-hidden">
         <motion.img
           src={image}
           alt={title}
+          loading="lazy"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
         />
       </div>
       
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-        <span className="text-accent text-xs uppercase tracking-widest mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+        <div className="flex items-center text-accent text-xs uppercase tracking-widest mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+          <MapPin size={12} className="mr-1" />
+          {location}
+        </div>
+        <span className="text-white/60 text-[10px] uppercase tracking-widest mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
           {category}
         </span>
-        <h3 className="text-2xl md:text-3xl font-display tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        <h3 className="text-2xl md:text-3xl font-display tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">
           {title}
         </h3>
       </div>
@@ -47,24 +59,52 @@ const ProjectCard = ({ title, category, image, className }: ProjectCardProps) =>
 const ProjectsSection = () => {
   const projects = [
     {
+      title: "Abakkus LLP",
+      category: "Commercial Office",
+      location: "Santacruz, Mumbai",
+      image: abakkusImg
+    },
+    {
+      title: "Lukzer Showroom",
+      category: "Retail Interior",
+      location: "Vasai, Palghar",
+      image: lukzerImg
+    },
+    {
+      title: "Luxury Bungalow",
+      category: "Residential Architecture",
+      location: "Jaunpur, Uttar Pradesh",
+      image: bungalowImg
+    },
+    {
+      title: "Jangid Complex",
+      category: "Residential Interior",
+      location: "Miraroad, Mumbai",
+      image: jangidImg
+    },
+    {
+      title: "Modern 4BHK",
+      category: "Interior Design",
+      location: "Miraroad, Mumbai",
+      image: miraroadImg
+    },
+    {
+      title: "Tradebulls Office",
+      category: "Commercial",
+      location: "Ahmedabad, Gujarat",
+      image: tradebullsImg
+    },
+    {
+      title: "Future Visions",
+      category: "Proposed Projects",
+      location: "Multiple Locations",
+      image: visualImg
+    },
+    {
       title: "The Glass Pavilion",
       category: "Residential",
+      location: "Conceptual",
       image: project1
-    },
-    {
-      title: "Nordic Museum",
-      category: "Cultural",
-      image: project2
-    },
-    {
-      title: "Urban Sanctuary",
-      category: "Landscape",
-      image: project3
-    },
-    {
-      title: "Slate & Shadow",
-      category: "Commercial",
-      image: project4
     }
   ];
 
@@ -81,9 +121,9 @@ const ProjectsSection = () => {
             </h2>
           </div>
           <div className="mt-8 md:mt-0">
-            <button className="px-8 py-4 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-500 uppercase tracking-widest text-xs font-bold">
+            <Link to="/portfolio" className="inline-block px-8 py-4 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-500 uppercase tracking-widest text-xs font-bold">
               View all projects
-            </button>
+            </Link>
           </div>
         </div>
 
