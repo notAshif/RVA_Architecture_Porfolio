@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion';
 import { useMediaQuery } from '../hooks/useMediaQuery';
-import video1 from '../assets/picture_2/VID_20220414_134051.mp4';
-import video2 from '../assets/picture_2/VID_20220414_140136.mp4';
-import video3 from '../assets/picture_2/VID_20220414_145903.mp4';
 
 // Use project images as fallback/thumbnails
 import thumb1 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (1).webp';
@@ -14,19 +11,19 @@ const VideoShowcase = () => {
 
   const videos = [
     {
-      src: video1,
+      src: '/videos/VID_20220414_134051.mp4',
       thumb: thumb1,
       title: "Abakkus Office Walkthrough",
       location: "Santacruz, Mumbai"
     },
     {
-      src: video2,
+      src: '/videos/VID_20220414_140136.mp4',
       thumb: thumb2,
       title: "Interior Dynamics",
       location: "Project Site"
     },
     {
-      src: video3,
+      src: '/videos/VID_20220414_145903.mp4',
       thumb: thumb3,
       title: "Spatial Experience",
       location: "Finished Interior"
