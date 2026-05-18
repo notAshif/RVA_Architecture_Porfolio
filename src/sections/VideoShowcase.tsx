@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useMediaQuery } from '../hooks/useMediaQuery';
 
 // Use project images as fallback/thumbnails
 import thumb1 from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (1).webp';
