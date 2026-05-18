@@ -46,7 +46,7 @@ const VideoShowcase = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: isMobile ? 0 : index * 0.2 }}
-              className="relative group rounded-lg overflow-hidden bg-muted cursor-pointer"
+              className="relative group rounded-lg overflow-hidden bg-muted cursor-pointer aspect-[9/16]"
             >
               <video
                 src={video.src}
