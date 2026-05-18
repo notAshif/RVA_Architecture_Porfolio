@@ -11,10 +11,10 @@ const VideoShowcase = () => {
 
   const videos = [
     {
-      src: 'https://drive.google.com/uc?export=download&id=1u8fy8wKEyka069pV5UT8RH1V_FFcwAVm',
+      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
       thumb: thumb1,
-      title: "Abakkus Office Walkthrough",
-      location: "Santacruz, Mumbai"
+      title: "Diagnostic Test Video",
+      location: "Public Server"
     },
     {
       src: 'https://drive.google.com/uc?export=download&id=1u7BxqO8M6NXsbNHPfWyGbC3m9tm_55c0',
