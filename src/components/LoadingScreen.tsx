@@ -19,22 +19,23 @@ const LoadingScreen = () => {
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 bg-background z-[10000] flex flex-col justify-center items-center px-6"
         >
-          <div className="overflow-hidden mb-8 w-full text-center">
+          <div className="overflow-hidden mb-12 w-full text-center px-4">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-              className="text-2xl min-[375px]:text-3xl sm:text-6xl md:text-8xl lg:text-9xl font-display tracking-tighter leading-none"
+              transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+              style={{ fontSize: "clamp(1.5rem, 10vw, 8rem)" }}
+              className="font-display tracking-tighter leading-none"
             >
               RVA ARCHITECTS
             </motion.h1>
           </div>
           
-          <div className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-md h-[1px] bg-white/10 relative overflow-hidden">
+          <div className="w-full max-w-[200px] sm:max-w-[300px] h-[1px] bg-white/5 relative overflow-hidden">
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: '0%' }}
-              transition={{ duration: 2, ease: "easeInOut" }}
+              transition={{ duration: 2.5, ease: [0.76, 0, 0.24, 1] }}
               className="absolute inset-0 bg-accent"
             />
           </div>
