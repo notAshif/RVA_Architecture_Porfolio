@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
-import { Layout, Shield, Wind, Zap } from 'lucide-react';
+import { Building2, Paintbrush, Briefcase, FileText } from 'lucide-react';
 
 import archDesignImg from '../assets/picture_2/architecture/Visualisation of proposed projects/pic3.webp';
 import interiorArchImg from '../assets/picture_1/Abakkus LLP, Location_ Santacruz/abbok (23).webp';
@@ -9,28 +9,28 @@ import projectMgmtImg from '../assets/picture_2/interior/Lukzer, Loacation_ Vasa
 
 const services = [
   {
-    icon: <Layout className="w-8 h-8" />,
-    title: "Architectural Design",
-    description: "Creating innovative and functional designs tailored to your unique vision and needs.",
+    icon: <Building2 className="w-8 h-8" />,
+    title: "Architecture",
+    description: "High-end residential and commercial design that redefines modern lifestyle living.",
     image: archDesignImg
   },
   {
-    icon: <Zap className="w-8 h-8" />,
-    title: "Interior Architecture",
-    description: "Optimizing internal spaces to enhance human experience and aesthetic value.",
+    icon: <Paintbrush className="w-8 h-8" />,
+    title: "Interiors",
+    description: "Bespoke interior design solutions tailored to reflect your unique personality and lifestyle.",
     image: interiorArchImg
   },
   {
-    icon: <Wind className="w-8 h-8" />,
-    title: "Sustainable Planning",
-    description: "Integrating eco-friendly practices and materials for a greener future.",
-    image: sustainableImg
+    icon: <Briefcase className="w-8 h-8" />,
+    title: "Project Consultancy",
+    description: "End-to-end project management (PMC) services, seamless execution from blueprint to completion.",
+    image: projectMgmtImg
   },
   {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Project Management",
-    description: "Ensuring seamless execution from concept to completion with rigorous quality control.",
-    image: projectMgmtImg
+    icon: <FileText className="w-8 h-8" />,
+    title: "Liaisoning",
+    description: "Handling complex regulatory approvals, government documentation for a hassle-free process.",
+    image: sustainableImg
   }
 ];
 

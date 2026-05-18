@@ -23,8 +23,8 @@ const About = () => {
         <h2 className="text-4xl md:text-6xl mb-12">Our Journey</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-lg text-white/60">
           <p>
-            For over 15 years, RVA Studio has been redefining the architectural landscape. 
-            What started as a small design boutique has grown into an international 
+            For over 10 years, RVA Studio has been redefining the architectural landscape. 
+            What started as a small design boutique has grown into a 
             firm known for its uncompromising commitment to quality and innovation.
           </p>
           <p>

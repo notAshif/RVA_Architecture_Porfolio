@@ -56,12 +56,11 @@ const Footer = () => {
                   Office
                 </span>
                 <p className="text-base md:text-lg">
-                  Office no. 4, D/82- Happy home Estate,
+                  406/m, Silent park, Golden nest,
                 </p>
                 <p className="text-base md:text-lg">
-                  Poonam sagar complex, Miraroad East,
+                  Mira Bhayandar 401105
                 </p>
-                <p className="text-base md:text-lg">Thane 401 105</p>
               </div>
             </div>
 

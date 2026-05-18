@@ -15,7 +15,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-6xl md:text-9xl font-display tracking-tighter">SERVICES</h1>
           <p className="text-xl font-medium mt-8 max-w-2xl">
-            Comprehensive architectural solutions tailored to elevate the human experience.
+            Delivering high-end design, bespoke interiors, and end-to-end project excellence across India.
           </p>
         </div>
       </div>

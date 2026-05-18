@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowDownRight } from 'lucide-react';
+import { ArrowDownRight, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 import heroImage from '../assets/DJI_20250125_131223_996.webp';
@@ -29,17 +30,27 @@ const Hero = () => {
           <span className="text-accent text-xs md:text-base uppercase tracking-[0.3em] font-medium mb-6 block">
             Architecture & Design Studio
           </span>
-          <h1 className="text-5xl md:text-[10vw] leading-[0.95] md:leading-[0.9] mb-12 max-w-[95%] md:max-w-[90%]">
+          <h1 className="text-5xl md:text-[10vw] leading-[0.95] md:leading-[0.9] mb-8 md:mb-12 max-w-[95%] md:max-w-[90%]">
             REDEFINING <br />
             <span className="text-accent italic font-light">SPACES</span>
           </h1>
+
+          <div className="mb-12 md:mb-0">
+            <Link 
+              to="/portfolio" 
+              className="inline-flex items-center space-x-4 bg-accent text-background px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors duration-300"
+            >
+              <span>View Portfolio</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: isMobile ? 0.8 : 1.5 }}
-          className="flex justify-between items-end"
+          className="flex justify-between items-end mt-32 md:mt-24"
         >
           <div className="max-w-md hidden md:block">
             <p className="text-lg text-white/60 leading-relaxed">

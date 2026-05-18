@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const googleMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.712345678901!2d72.85678901234567!3d19.283456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0669259952d%3A0x67c2851443840aa7!2sPoonam%20Sagar%20Complex!5e0!3m2!1sen!2sin!4v1716000000000!5m2!1sen!2sin";
+  const googleMapUrl = "https://maps.google.com/maps?q=406/m,+Silent+park,+Golden+nest,+Mira+Bhayandar+401105&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
   return (
     <motion.div
@@ -45,11 +45,9 @@ const Contact = () => {
                     Studio
                   </span>
                   <p className="text-xl md:text-2xl leading-relaxed">
-                    Office no. 4, D/82- Happy home Estate,
+                    406/m, Silent park, Golden nest,
                     <br />
-                    Poonam sagar complex, Miraroad East,
-                    <br />
-                    Thane 401 105
+                    Mira Bhayandar 401105
                   </p>
                 </div>
               </div>
